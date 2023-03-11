@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 class DotenvFiles:
     def __init__(self, path: Path):
         if not path.exists():
@@ -11,10 +12,11 @@ class DotenvFiles:
         self._load()
 
     def _load(self):
-        """Load dotenv files at ~/.swap_env/ with names given by their suffix."""
+        """Load dotenv files with names given by their suffix."""
         self._files = {
-            file.suffix.removeprefix("."): file
+            filename.removeprefix(".env."): file
             for file in self._path.iterdir()
+            if (filename := file.name).startswith(".env.")
         }
 
     def __iter__(self):
