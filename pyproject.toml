@@ -8,6 +8,7 @@ packages = [{include = "swap_env", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+inquirerpy = "^0.3.4"
 
 
 [build-system]
