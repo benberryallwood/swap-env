@@ -20,8 +20,8 @@ class DotenvFiles:
     def __iter__(self):
         return iter(sorted(self._files))
 
-    def __getitem__(self, index):
-        return self._files[index]
+    def __getitem__(self, name):
+        return self._files[name]
 
     def link(self, name: str):
         """Create symlink from ./.env to the dotenv file with the given name."""
