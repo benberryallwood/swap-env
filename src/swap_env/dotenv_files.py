@@ -1,17 +1,17 @@
 from pathlib import Path
 
 class DotenvFiles:
-    def __init__(self):
-        self._path = Path.home().joinpath(".swap_env")
+    def __init__(self, path: Path):
+        if not path.exists():
+            path.mkdir()
+        if not path.is_dir():
+            raise ValueError("Path must be a directory")
+
+        self._path = path
         self._load()
 
     def _load(self):
-        """Load dotenv files at ~/.swap_env/ with names given by their suffix.
-
-        Creates the directory ~/.swap_env/ if it doesn't exist.
-        """
-        if not self._path.exists():
-            self._path.mkdir()
+        """Load dotenv files at ~/.swap_env/ with names given by their suffix."""
         self._files = {
             file.suffix.removeprefix("."): file
             for file in self._path.iterdir()
