@@ -25,6 +25,9 @@ class DotenvFiles:
     def __getitem__(self, name):
         return self._files[name]
 
+    def __bool__(self) -> bool:
+        return bool(self._files)
+
     def link(self, name: str):
         """Create symlink from ./.env to the dotenv file with the given name."""
         dotenv = Path.cwd().joinpath(".env")
