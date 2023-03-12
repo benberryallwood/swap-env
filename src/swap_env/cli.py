@@ -28,7 +28,7 @@ def app():
         keybindings=keybindings,
     ).execute()
 
-    if dotenv_file_choice is None:
+    if dotenv_file_choice is None:  # prompt skipped with 'q' or 'escape'
         return
 
     dotenv_files.link(dotenv_file_choice)
