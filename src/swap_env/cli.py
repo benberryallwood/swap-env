@@ -4,6 +4,8 @@ from InquirerPy import inquirer
 from swap_env.dotenv_files import DotenvFiles
 
 
+DOTENV_DIR = Path.home().joinpath(".swap-env")
+
 keybindings = {
     "answer": [{"key": "enter"}],  # answer the prompt
     "interrupt": [{"key": "c-c"}],  # raise KeyboardInterrupt
@@ -12,7 +14,7 @@ keybindings = {
 
 
 def app():
-    dotenv_files = DotenvFiles(Path.home().joinpath(".swap-env"))
+    dotenv_files = DotenvFiles(path=DOTENV_DIR)
 
     dotenv_file_choice = inquirer.select(
         message="Select a .env file",
