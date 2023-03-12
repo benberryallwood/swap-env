@@ -12,7 +12,7 @@ keybindings = {
 
 
 def app():
-    dotenv_files = DotenvFiles(Path.home().joinpath(".swap_env"))
+    dotenv_files = DotenvFiles(Path.home().joinpath(".swap-env"))
 
     dotenv_file_choice = inquirer.select(
         message="Select a .env file",
