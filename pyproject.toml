@@ -1,10 +1,12 @@
 [tool.poetry]
 name = "swap-env"
 version = "0.1.0"
-description = ""
+description = "A simple CLI for swapping between .env files"
 authors = ["Ben Berry-Allwood <benberryallwood@gmail.com>"]
 readme = "README.md"
+license = "MIT"
 packages = [{include = "swap_env", from = "src"}]
+repository = "https://github.com/benberryallwood/swap-env"
 
 [tool.poetry.dependencies]
 python = "^3.10"
