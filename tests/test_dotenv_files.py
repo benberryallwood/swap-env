@@ -44,3 +44,24 @@ class TestDotenvFiles:
 
         dotenv_link = tmp_cwd.joinpath(".env")
         assert dotenv_link.samefile(dotenv)
+
+    def test_link_overwritten_if_exists(self, tmp_path: Path, tmp_cwd: Path):
+        (dotenv := tmp_path.joinpath(".env.one")).touch()
+        (initial_link := tmp_path.joinpath("initial-link")).touch()
+
+        dotenv_link = tmp_cwd.joinpath(".env")
+        dotenv_link.symlink_to(initial_link)
+
+        dotenv_files = DotenvFiles(tmp_path)
+        dotenv_files.link("one")
+
+        assert dotenv_link.samefile(dotenv)
+
+    def test_file_overwritten_if_exists(self, tmp_path: Path, tmp_cwd: Path):
+        (dotenv := tmp_path.joinpath(".env.one")).touch()
+        (existing_dotenv := tmp_cwd.joinpath(".env")).touch()
+
+        dotenv_files = DotenvFiles(tmp_path)
+        dotenv_files.link("one")
+
+        assert existing_dotenv.samefile(dotenv)
