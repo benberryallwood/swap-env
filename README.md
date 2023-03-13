@@ -2,7 +2,11 @@
 
 `swap-env` is a simple CLI for swapping between different `.env` files.
 
-![demo](https://user-images.githubusercontent.com/71074961/224778989-9c729a83-0774-4069-8ae6-5aa73c16ef1f.gif)
+![demo](https://user-images.githubusercontent.com/71074961/224817847-828bace2-5ab1-47d9-8ad2-e6a3e47d57f8.gif)
+
+## Requirements
+
+`python >= 3.10`
 
 ## Installation
 
@@ -32,14 +36,14 @@ Then simply run `swap-env` and select the file you want to use. A symlink will b
 
 ```bash
 $ swap-env
-? Select a .env file
+? Select a .env file:
 ❯ dev
   test
   
-? Select a .env file dev
+? Select a .env file: dev
 
 $ ls -l .env
 ... .env@ -> ~/.swap-env/.env.dev
 ```
 
-**Note:** This will overwrite any file or link currently at `./.env`
+If you have a local `.env` file (not a symlink), you will be prompted whether to save it first.
