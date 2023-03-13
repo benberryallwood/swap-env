@@ -13,6 +13,8 @@ class DotenvFiles:
 
         >>> dotenv_files = DotenvFiles(pathlib.Path.home())
 
+        >>> dotenv_files.save_local_dotenv("test")
+
         >>> list(dotenv_files)
         ['dev', 'test']
 
@@ -53,5 +55,10 @@ class DotenvFiles:
         """Create symlink from ./.env to the dotenv file with the given name."""
         dotenv = Path.cwd().joinpath(".env")
         dotenv.unlink(missing_ok=True)
-
         dotenv.symlink_to(self._files[name])
+
+    def save_local_dotenv(self, name: str) -> None:
+        """Save ./.env to the store with the given name."""
+        local_dotenv_path = Path.cwd().joinpath(".env")
+        new_path = local_dotenv_path.rename(self._path.joinpath(f".env.{name}"))
+        self._files[name] = new_path

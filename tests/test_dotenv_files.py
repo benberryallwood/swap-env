@@ -65,3 +65,11 @@ class TestDotenvFiles:
         dotenv_files.link("one")
 
         assert existing_dotenv.samefile(dotenv)
+
+    def test_local_dotenv_file_saved(self, tmp_path: Path, tmp_cwd: Path):
+        tmp_cwd.joinpath(".env").write_text("#dotenv")
+
+        dotenv_files = DotenvFiles(tmp_path)
+        dotenv_files.save_local_dotenv("name")
+
+        assert tmp_path.joinpath(".env.name").read_text() == "#dotenv"
