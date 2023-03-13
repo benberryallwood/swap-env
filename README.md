@@ -2,6 +2,8 @@
 
 `swap-env` is a simple CLI for swapping between different `.env` files.
 
+![demo](https://user-images.githubusercontent.com/71074961/224778989-9c729a83-0774-4069-8ae6-5aa73c16ef1f.gif)
+
 ## Installation
 
 - with [`pipx`](https://pypa.github.io/pipx/) (recommended):
