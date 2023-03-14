@@ -16,6 +16,16 @@
 $ pipx install swap-env
 ```
 
+If you use a version of python less than `3.10`, you can provide pipx with a different version to use for this package. I'd recommend [pyenv](https://github.com/pyenv/pyenv) for managing python versions:
+
+```bash
+$ # make sure you have python3.10 installed
+$ pyenv install 3.10
+
+$ # use that version with pipx
+$ pipx install --python $(pyenv which python3.10) swap-env
+```
+
 - with `pip`:
 
 ```bash
