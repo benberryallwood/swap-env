@@ -34,9 +34,9 @@ class DotenvFiles:
     def _load(self) -> None:
         """Load .env files with names given by their suffix."""
         self._files = {
-            filename.removeprefix(".env."): file
+            file.name.removeprefix(".env."): file
             for file in self._path.iterdir()
-            if (filename := file.name).startswith(".env.")
+            if file.name.startswith(".env.")
         }
 
     def __iter__(self) -> Iterator[str]:
