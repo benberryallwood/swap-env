@@ -29,6 +29,7 @@ class DotenvFiles:
             raise ValueError("Path must be a directory")
 
         self._path = path
+        self._local_dotenv = Path.cwd().joinpath(".env")
         self._load()
 
     def _load(self) -> None:
@@ -53,12 +54,10 @@ class DotenvFiles:
 
     def link(self, name: str) -> None:
         """Create symlink from ./.env to the dotenv file with the given name."""
-        dotenv = Path.cwd().joinpath(".env")
-        dotenv.unlink(missing_ok=True)
-        dotenv.symlink_to(self._files[name])
+        self._local_dotenv.unlink(missing_ok=True)
+        self._local_dotenv.symlink_to(self._files[name])
 
     def save_local_dotenv(self, name: str) -> None:
         """Save ./.env to the store with the given name."""
-        local_dotenv_path = Path.cwd().joinpath(".env")
-        new_path = local_dotenv_path.rename(self._path.joinpath(f".env.{name}"))
+        new_path = self._local_dotenv.rename(self._path.joinpath(f".env.{name}"))
         self._files[name] = new_path
