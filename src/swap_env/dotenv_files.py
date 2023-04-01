@@ -28,7 +28,7 @@ class DotenvFiles:
         if not path.is_dir():
             raise ValueError("Path must be a directory")
 
-        self._path = path
+        self.path = path
         self._local_dotenv = Path.cwd().joinpath(".env")
         self._load()
 
@@ -36,7 +36,7 @@ class DotenvFiles:
         """Load .env files with names given by their suffix."""
         self._files = {
             file.name.removeprefix(".env."): file
-            for file in self._path.iterdir()
+            for file in self.path.iterdir()
             if file.name.startswith(".env.")
         }
 
@@ -59,5 +59,5 @@ class DotenvFiles:
 
     def save_local_dotenv(self, name: str) -> None:
         """Save ./.env to the store with the given name."""
-        new_path = self._local_dotenv.rename(self._path.joinpath(f".env.{name}"))
+        new_path = self._local_dotenv.rename(self.path.joinpath(f".env.{name}"))
         self._files[name] = new_path

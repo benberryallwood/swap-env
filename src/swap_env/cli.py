@@ -42,7 +42,7 @@ def app():
     prompt_to_save_current_file_if_exists(dotenv_files=dotenv_files)
 
     if not dotenv_files:
-        print("There are no .env files in ~/.swap-env/")
+        print(f"No dotenv files found in {dotenv_files.path}")
         return
 
     dotenv_file_choice: Optional[str] = inquirer.select(
