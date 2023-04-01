@@ -1,11 +1,11 @@
 from pathlib import Path
 from typing import Optional
+
 from InquirerPy import inquirer
 
+from swap_env.dotenv_dir import search_fs_for_dotenv_dir
 from swap_env.dotenv_files import DotenvFiles
 
-
-DOTENV_DIR = Path.home().joinpath(".swap-env")
 
 keybindings = {
     "answer": [{"key": "enter"}],  # answer the prompt
@@ -37,7 +37,8 @@ def prompt_to_save_current_file_if_exists(dotenv_files: DotenvFiles) -> None:
 
 
 def app():
-    dotenv_files = DotenvFiles(path=DOTENV_DIR)
+    dotenv_dir = search_fs_for_dotenv_dir()
+    dotenv_files = DotenvFiles(path=dotenv_dir)
 
     prompt_to_save_current_file_if_exists(dotenv_files=dotenv_files)
 
