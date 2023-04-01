@@ -22,6 +22,8 @@ class DotenvFiles:
         >>> dotenv_files.link("dev")
     """
 
+    DOTENV_FILE_PREFIX = ".env."
+
     def __init__(self, path: Path):
         if not path.exists():
             path.mkdir()
@@ -35,9 +37,9 @@ class DotenvFiles:
     def _load(self) -> None:
         """Load .env files with names given by their suffix."""
         self._files = {
-            file.name.removeprefix(".env."): file
+            file.name.removeprefix(self.DOTENV_FILE_PREFIX): file
             for file in self.path.iterdir()
-            if file.name.startswith(".env.")
+            if file.name.startswith(self.DOTENV_FILE_PREFIX)
         }
 
     def __iter__(self) -> Iterator[str]:
@@ -59,5 +61,7 @@ class DotenvFiles:
 
     def save_local_dotenv(self, name: str) -> None:
         """Save ./.env to the store with the given name."""
-        new_path = self._local_dotenv.rename(self.path.joinpath(f".env.{name}"))
+        new_path = self._local_dotenv.rename(
+            self.path.joinpath(f"{self.DOTENV_FILE_PREFIX}{name}")
+        )
         self._files[name] = new_path
