@@ -21,6 +21,11 @@ pre-commit = "^3.2.2"
 [tool.poetry.scripts]
 swap-env = 'swap_env.cli:app'
 
+[tool.pytest.ini_options]
+addopts = [
+  "--import-mode=importlib",
+]
+
 [tool.ruff]
 line-length = 90
 select = [
