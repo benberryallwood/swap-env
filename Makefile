@@ -4,7 +4,11 @@ build:
 
 .PHONY: lint
 lint:
-	poetry run black src/
+	poetry run ruff check .
+
+.PHONY: format
+format:
+	poetry run black .
 
 .PHONY: test
 test:
