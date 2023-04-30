@@ -5,12 +5,6 @@ import pytest
 from swap_env.dotenv_files import DotenvFiles
 
 
-@pytest.fixture()
-def tmp_cwd(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> Path:
-    monkeypatch.chdir(tmp_path)
-    return tmp_path
-
-
 class TestDotenvFiles:
     def test_value_error_raised_given_a_file(self, tmp_path: Path):
         (filepath := tmp_path.joinpath("file")).touch()
