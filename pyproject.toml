@@ -15,9 +15,18 @@ inquirerpy = "^0.3.4"
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.2"
 black = "^23.1.0"
+ruff = "^0.0.263"
 
 [tool.poetry.scripts]
 swap-env = 'swap_env.cli:app'
+
+[tool.ruff]
+line-length = 90
+select = [
+  "E",   # pycodestyle
+  "F",   # pyflakes
+  "UP",  # pyupgrade
+]
 
 [build-system]
 requires = ["poetry-core"]
