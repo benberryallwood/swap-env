@@ -1,11 +1,9 @@
 from pathlib import Path
-from typing import Optional
 
 from InquirerPy import inquirer
 
 from swap_env.dotenv_dir import search_fs_for_dotenv_dir
 from swap_env.dotenv_files import DotenvFiles
-
 
 keybindings = {
     "answer": [{"key": "enter"}],  # answer the prompt
@@ -46,7 +44,7 @@ def app():
         print(f"No dotenv files found in {dotenv_files.path}")
         return
 
-    dotenv_file_choice: Optional[str] = inquirer.select(
+    dotenv_file_choice: str | None = inquirer.select(
         message="Select a .env file:",
         choices=list(dotenv_files),
         vi_mode=True,
