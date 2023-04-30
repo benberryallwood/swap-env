@@ -10,7 +10,6 @@ def search_fs_for_dotenv_dir() -> Path:
     If no dotenv dir is found, or if the CWD isn't inside the home dir, then
     this defaults to `~/.swap-env/`.
     """
-
     cwd = Path.cwd()
     home = Path.home()
 
@@ -29,7 +28,6 @@ def iter_tree(start_dir: Path, end_dir: Path) -> Generator[Path, None, None]:
 
     If start_dir is not in end_dir, an empty iterator is returned.
     """
-
     if not start_dir.is_relative_to(end_dir):
         return
 
