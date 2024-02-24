@@ -6,7 +6,7 @@
 
 ## Requirements
 
-`python >= 3.10`
+`python >= 3.9`
 
 ## Installation
 
@@ -16,15 +16,15 @@
 pipx install swap-env
 ```
 
-If you use a version of python less than `3.10`, you can provide pipx with a different version to use for this package.
+If you use a version of python less than `3.9`, you can provide pipx with a different version to use for this package.
 I'd recommend [pyenv](https://github.com/pyenv/pyenv) for managing python versions:
 
 ```bash
-# make sure you have python3.10 installed
-pyenv install 3.10
+# make sure you have python3.9 installed
+pyenv install 3.9
 
 # use that version with pipx
-pipx install --python $(pyenv which python3.10) swap-env
+pipx install --python $(pyenv which python3.9) swap-env
 ```
 
 - with `pip`:
