@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "swap-env"
-version = "1.0.0"
+version = "1.0.1"
 description = "A simple CLI for swapping between .env files"
 authors = ["Ben Berry-Allwood <benberryallwood@gmail.com>"]
 readme = "README.md"
