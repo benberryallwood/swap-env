@@ -14,7 +14,6 @@ inquirerpy = "^0.3.4"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.1"
-black = "^24.2.0"
 ruff = "^0.2.2"
 pre-commit = "^3.6.2"
 
@@ -28,14 +27,17 @@ addopts = [
 
 [tool.ruff]
 line-length = 90
-lint.select = [
+
+[tool.ruff.lint]
+select = [
   "E",   # pycodestyle
   "F",   # pyflakes
   "UP",  # pyupgrade
 ]
 
-[tool.black]
-line-length = 90
+[tool.ruff.format]
+docstring-code-format = true
+line-ending = "lf"
 
 [build-system]
 requires = ["poetry-core"]

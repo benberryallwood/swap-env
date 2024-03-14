@@ -8,7 +8,7 @@ lint:
 
 .PHONY: format
 format:
-	poetry run black .
+	poetry run ruff format
 
 .PHONY: test
 test:
