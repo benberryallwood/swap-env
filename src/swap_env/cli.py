@@ -1,5 +1,6 @@
+from __future__ import annotations
+
 from pathlib import Path
-from typing import Optional
 
 from InquirerPy import inquirer
 
@@ -45,7 +46,7 @@ def app():
         print(f"No dotenv files found in {dotenv_files.path}")
         return
 
-    dotenv_file_choice: Optional[str] = inquirer.select(
+    dotenv_file_choice: str | None = inquirer.select(
         message="Select a .env file:",
         choices=list(dotenv_files),
         vi_mode=True,

@@ -30,10 +30,17 @@ line-length = 90
 
 [tool.ruff.lint]
 select = [
-  "E",   # pycodestyle
-  "F",   # pyflakes
-  "UP",  # pyupgrade
+  "E",    # pycodestyle (error)
+  "W",    # pycodestyle (warning)
+  "F",    # pyflakes
+  "UP",   # pyupgrade
+  "C90",  # mccabe
+  "I",    # isort
+  "FA",   # flake8-future-annotations
 ]
+
+[tool.ruff.lint.isort]
+known-first-party = ["swap_env"]
 
 [tool.ruff.format]
 docstring-code-format = true
