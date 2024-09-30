@@ -1,6 +1,5 @@
 # Swap Env
 
-[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![PyPI - Version](https://img.shields.io/pypi/v/swap-env.svg)](https://pypi.python.org/pypi/swap-env)
 [![PyPI - License](https://img.shields.io/pypi/l/swap-env.svg)](https://github.com/benberryallwood/swap-env/blob/main/LICENSE)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/swap-env.svg)](https://pypi.python.org/pypi/swap-env)
