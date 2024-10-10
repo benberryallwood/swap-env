@@ -1,24 +1,41 @@
-[tool.poetry]
+[project]
 name = "swap-env"
 version = "1.0.1"
 description = "A simple CLI for swapping between .env files"
-authors = ["Ben Berry-Allwood <benberryallwood@gmail.com>"]
+authors = [
+    { name = "Ben Berry-Allwood", email = "benberryallwood@gmail.com" }
+]
 readme = "README.md"
-license = "MIT"
-packages = [{include = "swap_env", from = "src"}]
-repository = "https://github.com/benberryallwood/swap-env"
+classifiers = [
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3 :: Only",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "inquirerpy>=0.3.4,<0.4",
+]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-inquirerpy = "^0.3.4"
+[project.urls]
+Repository = "https://github.com/benberryallwood/swap-env"
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.0.1"
-ruff = "0.6.8"
-pre-commit = "^3.8.0"
+[project.scripts]
+swap-env = "swap_env.cli:app"
 
-[tool.poetry.scripts]
-swap-env = 'swap_env.cli:app'
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.3.3,<9",
+    "pre-commit==4.0.1",
+    "ruff==0.6.9",
+]
 
 [tool.pytest.ini_options]
 addopts = [
@@ -47,5 +64,5 @@ docstring-code-format = true
 line-ending = "lf"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,15 +1,15 @@
 .PHONY: build
 build:
-	poetry build
+	uv build
 
 .PHONY: lint
 lint:
-	poetry run ruff check .
+	uv run ruff check .
 
 .PHONY: format
 format:
-	poetry run ruff format
+	uv run ruff format
 
 .PHONY: test
 test:
-	poetry run pytest
+	uv run pytest
