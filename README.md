@@ -9,33 +9,18 @@
 
 ![demo](https://user-images.githubusercontent.com/71074961/224817847-828bace2-5ab1-47d9-8ad2-e6a3e47d57f8.gif)
 
-## Requirements
-
-`python >= 3.9`
-
 ## Installation
-
-- with [`pipx`](https://pypa.github.io/pipx/) (recommended):
-
-```bash
-pipx install swap-env
-```
-
-If you use a version of python less than `3.9`, you can provide pipx with a different version to use for this package.
-I'd recommend [pyenv](https://github.com/pyenv/pyenv) for managing python versions:
-
-```bash
-# make sure you have python3.9 installed
-pyenv install 3.9
-
-# use that version with pipx
-pipx install --python $(pyenv which python3.9) swap-env
-```
 
 - with `pip`:
 
 ```bash
 pip install swap-env
+```
+
+- with [`uv`](https://docs.astral.sh/uv/) (recommended):
+
+```bash
+uv tool install swap-env
 ```
 
 ## Usage
