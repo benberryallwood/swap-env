@@ -21,7 +21,7 @@ classifiers = [
 ]
 requires-python = ">=3.9"
 dependencies = [
-    "inquirerpy>=0.3.4,<0.4",
+    "prompt-toolkit>=3.0.48",
 ]
 
 [project.urls]
