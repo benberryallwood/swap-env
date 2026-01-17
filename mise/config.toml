@@ -31,7 +31,6 @@ quiet = true
 [tasks.test-all]
 description = "Run tests for all supported Python versions"
 depends = [
-  "test --python 3.9",
   "test --python 3.10",
   "test --python 3.11",
   "test --python 3.12",

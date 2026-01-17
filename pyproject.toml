@@ -3,7 +3,7 @@ name = "swap-env"
 version = "1.0.2"
 description = "A simple CLI for swapping between .env files"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 authors = [{ name = "Ben Berry-Allwood", email = "benberryallwood@gmail.com" }]
 classifiers = [
   "Environment :: Console",
@@ -12,7 +12,6 @@ classifiers = [
   "Operating System :: OS Independent",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",

@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   The process now can't be exited cleanly with `q` or `Esc`. It can only be
   interrupted with `<C-c>`.
 
+### Removed
+
+- Drop support for Python 3.9.
+
 ### Documentation
 
 - Recommend installation with uv rather than pipx.
