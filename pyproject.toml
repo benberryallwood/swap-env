@@ -23,7 +23,8 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/benberryallwood/swap-env"
+Repository = "https://codeberg.org/benba/swap-env"
+Changelog = "https://codeberg.org/benba/swap-env/src/branch/main/CHANGELOG.md"
 
 [project.scripts]
 swap-env = "swap_env.cli:app"

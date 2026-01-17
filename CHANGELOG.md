@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrade uv and dev dependencies.
 - Use mise to manage uv and as a task runner.
 - Remove GitHub workflows and use mise tasks instead.
+- Migrate from GitHub to Codeberg.
 
 ## [v1.0.2] - 2024-10-12
 
