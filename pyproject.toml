@@ -2,26 +2,24 @@
 name = "swap-env"
 version = "1.0.2"
 description = "A simple CLI for swapping between .env files"
-authors = [
-    { name = "Ben Berry-Allwood", email = "benberryallwood@gmail.com" }
-]
 readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Ben Berry-Allwood", email = "benberryallwood@gmail.com" }]
 classifiers = [
   "Environment :: Console",
   "Intended Audience :: Developers",
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
   "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
-  "Programming Language :: Python :: 3 :: Only",
 ]
-requires-python = ">=3.9"
 dependencies = [
-    "prompt-toolkit>=3.0.48",
+  "prompt-toolkit>=3.0.48",
 ]
 
 [project.urls]
@@ -32,12 +30,16 @@ swap-env = "swap_env.cli:app"
 
 [dependency-groups]
 dev = [
-    "pytest>=8.4.2",
-    "pre-commit>=4.3.0",
-    "ruff==0.14.13",
+  "pre-commit>=4.3.0",
+  "pytest>=8.4.2",
+  "ruff==0.14.13",
 ]
 
-[tool.pytest.ini_options]
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest]
 addopts = [
   "--import-mode=importlib",
 ]
@@ -47,13 +49,13 @@ line-length = 90
 
 [tool.ruff.lint]
 select = [
-  "E",    # pycodestyle (error)
-  "W",    # pycodestyle (warning)
-  "F",    # pyflakes
-  "UP",   # pyupgrade
+  "E",  # pycodestyle (error)
+  "W",  # pycodestyle (warning)
+  "F",  # pyflakes
+  "UP",  # pyupgrade
   "C90",  # mccabe
-  "I",    # isort
-  "FA",   # flake8-future-annotations
+  "I",  # isort
+  "FA",  # flake8-future-annotations
 ]
 
 [tool.ruff.lint.isort]
@@ -62,7 +64,3 @@ known-first-party = ["swap_env"]
 [tool.ruff.format]
 docstring-code-format = true
 line-ending = "lf"
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
