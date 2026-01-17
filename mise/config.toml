@@ -1,3 +1,5 @@
+min_version = "2025.11.3"
+
 [settings]
 experimental = true
 lockfile = true
@@ -16,4 +18,31 @@ run = "uv run ruff check ."
 run = "uv run ruff format"
 
 [tasks.test]
-run = "uv run pytest"
+description = "Run tests"
+run = """
+if [ '{{ option(name='python') }}' != '' ]; then
+  uv run --python {{ option(name='python') }} --isolated pytest
+else
+  uv run pytest
+fi
+"""
+quiet = true
+
+[tasks.test-all]
+description = "Run tests for all supported Python versions"
+depends = [
+  "test --python 3.9",
+  "test --python 3.10",
+  "test --python 3.11",
+  "test --python 3.12",
+  "test --python 3.13",
+]
+
+[tasks.ci]
+description = "Perform all steps for CI"
+depends = ["lint", "format", "test-all"]
+
+[tasks.publish]
+confirm = "This will publish to PyPI - are you sure?"
+description = "Publish to PyPI"
+run = "uv publish"

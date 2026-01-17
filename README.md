@@ -3,7 +3,6 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/swap-env.svg)](https://pypi.python.org/pypi/swap-env)
 [![PyPI - License](https://img.shields.io/pypi/l/swap-env.svg)](https://github.com/benberryallwood/swap-env/blob/main/LICENSE)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/swap-env.svg)](https://pypi.python.org/pypi/swap-env)
-[![Actions status](https://github.com/benberryallwood/swap-env/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/benberryallwood/swap-env/actions/workflows/ci.yml)
 
 `swap-env` is a simple CLI for swapping between different `.env` files.
 
