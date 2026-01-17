@@ -1,0 +1,19 @@
+[settings]
+experimental = true
+lockfile = true
+
+[tools]
+uv = "latest"
+
+[tasks.build]
+description = "Build source distribution archive and wheel"
+run = "uv build"
+
+[tasks.lint]
+run = "uv run ruff check ."
+
+[tasks.format]
+run = "uv run ruff format"
+
+[tasks.test]
+run = "uv run pytest"

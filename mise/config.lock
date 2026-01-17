@@ -1,0 +1,3 @@
+[[tools.uv]]
+version = "0.9.26"
+backend = "aqua:astral-sh/uv"
