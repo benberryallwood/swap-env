@@ -6,7 +6,7 @@
 
 `swap-env` is a simple CLI for swapping between different `.env` files.
 
-![demo](https://user-images.githubusercontent.com/71074961/224817847-828bace2-5ab1-47d9-8ad2-e6a3e47d57f8.gif)
+![swap-env demo](assets/swap-env-demo.gif)
 
 ## Installation
 
