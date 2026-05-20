@@ -60,9 +60,6 @@ select = [
   "FA",  # flake8-future-annotations
 ]
 
-[tool.ruff.lint.isort]
-known-first-party = ["swap_env"]
-
 [tool.ruff.format]
 docstring-code-format = true
 line-ending = "lf"
